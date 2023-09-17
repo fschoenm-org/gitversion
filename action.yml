@@ -3,12 +3,16 @@ description: ""
 outputs:
   Major:
     description: ""
+    value: ${{ steps.gitversion.outputs.Major }}
   Minor:
     description: ""
+    value: ${{ steps.gitversion.outputs.Minor }}
   Patch:
     description: ""
+    value: ${{ steps.gitversion.outputs.Patch }}
   PreReleaseTag:
     description: ""
+    value: ${{ steps.gitversion.outputs.PreReleaseTag }}
   PreReleaseTagWithDash:
     description: ""
   PreReleaseLabel:
@@ -29,6 +33,7 @@ outputs:
     description: ""
   SemVer:
     description: ""
+    value: ${{ steps.gitversion.outputs.SemVer }}
   LegacySemVer:
     description: ""
   LegacySemVerPadded:
@@ -47,6 +52,7 @@ outputs:
     description: ""
   Sha:
     description: ""
+    value: ${{ steps.gitversion.outputs.Sha }}
   ShortSha:
     description: ""
   NuGetVersionV2:
@@ -79,7 +85,8 @@ runs:
       with:
         python-version: 3.11
 
-    - name: Run GitVersion
+    - id: gitversion
+      name: Run GitVersion
       shell: sh
       run: |
         python ${{ github.action_path }}/gitversion.py ${{ github.workspace }}

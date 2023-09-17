@@ -80,5 +80,6 @@ runs:
         python-version: 3.11
 
     - name: Run GitVersion
+      shell: sh
       run: |
         python gitversion.py

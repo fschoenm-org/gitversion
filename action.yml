@@ -1,10 +1,72 @@
 name: GitVersion
 description: ""
-inputs:
 outputs:
+  Major:
+    description: ""
+  Minor:
+    description: ""
+  Patch:
+    description: ""
+  PreReleaseTag:
+    description: ""
+  PreReleaseTagWithDash:
+    description: ""
+  PreReleaseLabel:
+    description: ""
+  PreReleaseLabelWithDash:
+    description: ""
+  PreReleaseNumber:
+    description: ""
+  WeightedPreReleaseNumber:
+    description: ""
+  BuildMetaData:
+    description: ""
+  BuildMetaDataPadded:
+    description: ""
+  FullBuildMetaData:
+    description: ""
+  MajorMinorPatch:
+    description: ""
   SemVer:
-    description: "The semantic version of the current commit"
-    value: ${{ steps.gitversion.outputs.SemVer }}
+    description: ""
+  LegacySemVer:
+    description: ""
+  LegacySemVerPadded:
+    description: ""
+  AssemblySemVer:
+    description: ""
+  AssemblySemFileVer:
+    description: ""
+  FullSemVer:
+    description: ""
+  InformationalVersion:
+    description: ""
+  BranchName:
+    description: ""
+  EscapedBranchName:
+    description: ""
+  Sha:
+    description: ""
+  ShortSha:
+    description: ""
+  NuGetVersionV2:
+    description: ""
+  NuGetVersion:
+    description: ""
+  NuGetPreReleaseTagV2:
+    description: ""
+  NuGetPreReleaseTag:
+    description: ""
+  VersionSourceSha:
+    description: ""
+  CommitsSinceVersionSource:
+    description: ""
+  CommitsSinceVersionSourcePadded:
+    description: ""
+  UncommittedChanges:
+    description: ""
+  CommitDate:
+    description: ""
 
 runs:
   using: composite

@@ -1,0 +1,22 @@
+name: GitVersion
+description: ""
+inputs:
+outputs:
+  SemVer:
+    description: "The semantic version of the current commit"
+    value: ${{ steps.gitversion.outputs.SemVer }}
+
+runs:
+  using: composite
+  steps:
+    - name: Checkout source code
+      uses: actions/checkout@v4
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.11
+
+    - name: Run GitVersion
+      run: |
+        python gitversion.py

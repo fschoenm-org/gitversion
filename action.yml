@@ -82,4 +82,4 @@ runs:
     - name: Run GitVersion
       shell: sh
       run: |
-        python ${{ github.action_path }}/gitversion.py
+        python ${{ github.action_path }}/gitversion.py ${{ github.workspace }}
